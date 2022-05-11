@@ -1,0 +1,27 @@
+server:
+  port: 8030
+spring:
+  application:
+    name: getaway
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+main:
+  allow-bean-definition-overring: true
+zuuL:
+  routes:
+    provider: /p/**
+  host:
+    connect-timeout-millis: 3000
+    socket-timeout-millis: 3000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeout-in-milliseconds: 3000
+ribbon:
+  ReadTimeout: 3000
+  ConnectTimeout: 3000
